@@ -1,20 +1,25 @@
+
 import './App.css';
-import Banner from './components/Banner';
-import MovieList from './components/MovieList';
-import NavBar from './components/NavBar';
-import Fav from './components/Fav'
-import {BrowserRouter,Routes,Route, Router} from 'react-router-dom'
+import Card from './component/Card';
+import Navbar from './component/Navbar';
+import Favourite from './component/Favourite';
+import {BrowserRouter, Routes,Link,Route} from "react-router-dom"
 
 function App() {
   return (
+    <>
     <BrowserRouter>
-      <NavBar/>
+      <Navbar/>
       <Routes>
-        <Route path="/" element={<><Banner/><MovieList/></>}/>
-        <Route path="/favourites" element={<Fav/>}/>
+        <Route path='/' exect element={<Card/>}/>
+        <Route path='/favourite' element={<Favourite/>}/>
       </Routes>
+     
+    
     </BrowserRouter>
-    );
+    
+    </>
+  );
 }
 
 export default App;
